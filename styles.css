@@ -4,12 +4,69 @@ body {
   padding: 0;
 }
 .container {
-  border: 2px solid gold;
+  border: 1px solid gray;
   display: flex;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 90vh;
   width: 90vw;
+}
+.testing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*
+    sunrise
+    background: linear-gradient(
+    to top,
+    #feebf8,
+    #f1c7f1 45%,
+    #c999e5 75%,
+    #9c75c6 100%
+  ); */
+
+  /*early morning*/
+  background: linear-gradient(to top, #fffffe, #ffebda 65%, #ffd9cc 100%);
+
+  /*midday*/
+  background: linear-gradient(
+    to top,
+    #c9f6ff,
+    #97ebf4 45%,
+    #7ae5f5 65%,
+    #65ddef 78%,
+    #35d6ed 100%
+  );
+
+  /*
+  sunset:
+    background: linear-gradient(to top, #882f7f, #412683 70%, #292369 100%);
+  
+  */
+
+  /* rain
+  background: linear-gradient(to top, #98bdbd, #5c9ac7 35%, #6a899e);
+  */
+
+  width: 100%;
+  height: 50%;
+  opacity: 0.9;
+  z-index: 1;
+}
+.mt,
+.mtshadow {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  height: auto;
+  width: 100%;
+  height: 20%;
+  z-index: 1000;
+  opacity: 1;
+}
+.mt svg,
+.mtshadow svg {
+  width: 100%;
 }
