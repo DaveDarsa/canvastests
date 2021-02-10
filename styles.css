@@ -67,7 +67,7 @@ body {
 .mt,
 .mtshadow {
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 0%;
   height: auto;
   width: 100%;
@@ -82,7 +82,7 @@ body {
 
 .fartrees {
   position: absolute;
-  top: 69%;
+  top: 74%;
   left: 31%;
   z-index: 15;
   width: 39%;
@@ -94,7 +94,7 @@ body {
 .fartreesleft {
   position: absolute;
   width: 42%;
-  top: 43%;
+  top: 46%;
   left: 0;
 }
 .fartreesleft svg {
@@ -103,25 +103,17 @@ body {
 .fartreesright {
   position: absolute;
   width: 44%;
-  top: 38%;
+  top: 41%;
   right: 0;
 }
 .fartreesright svg {
   width: 100%;
 }
-.land {
-  position: absolute;
-  top: 80.5%;
-  z-index: 20;
-  width: 100%;
-  height: 250px;
-  left: 0;
-  background-color: #c8b5aa;
-}
+
 .farfrontleft {
   position: absolute;
   width: 38.5%;
-  top: 70.5%;
+  top: 73.5%;
   left: -5.5%;
   z-index: 50;
   transform: rotateY(200deg) rotateZ(5deg) rotateX(30deg) translateY(1%);
@@ -135,7 +127,7 @@ body {
 .farfrontright {
   position: absolute;
   width: 33%;
-  top: 66.9%;
+  top: 69.9%;
   right: -2%;
   z-index: 22;
   transform: rotateY(201deg) rotateZ(-5.5deg) rotateX(-30deg) scaleX(-1)
@@ -145,10 +137,20 @@ body {
   width: 100%;
   width: 0;
 }
-
+.water {
+  position: absolute;
+  top: 84%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 150;
+}
+.water svg {
+  width: 100%;
+}
 .firstview {
   position: absolute;
-  bottom: -8%;
+  bottom: -3.2%;
   left: 0;
   width: 110%;
   z-index: 200;
@@ -160,26 +162,98 @@ body {
 .firstviewright {
   position: absolute;
   z-index: 300;
-  width: 120%;
-  bottom: -12%;
-  right: -78%;
+  width: 130%;
+  bottom: -16%;
+  right: -84%;
   transform: scaleX(-1) scale(0.8);
 }
 .firstviewleft {
   position: absolute;
   z-index: 300;
   width: 85%;
-  bottom: -18%;
-  left: -47.5%;
-  transform: scale(0.9) scaleX(-1);
+  bottom: -13.5%;
+  left: -45.9%;
+  transform: scale(0.9);
 }
-.firstgrassleft {
+
+.leftgrass {
   position: absolute;
-  bottom: 5%;
-  left: 29%;
-  width: 15%;
-  z-index: 300;
+  top: 78%;
+  left: 26%;
+  width: 20%;
+  z-index: 202;
 }
-.firstgrassleft svg {
+.leftgrass svg {
+  width: 100%;
+}
+.middlegrass {
+  position: absolute;
+  top: 89%;
+  left: 40.2%;
+  width: 22%;
+  z-index: 403;
+}
+.middlegrass svg {
+  width: 100%;
+}
+.rightgrass {
+  position: absolute;
+  width: 20%;
+  top: 88%;
+  left: 56%;
+  z-index: 301;
+}
+.rightgrass svg {
+  width: 100%;
+}
+.closeforestleft {
+  position: absolute;
+  top: 69%;
+  left: -10%;
+  width: 50%;
+  z-index: 190;
+}
+.closeforestleft svg {
+  width: 100%;
+}
+.closeforest {
+  position: absolute;
+  top: 79%;
+  left: 29%;
+  width: 43%;
+  z-index: 191;
+}
+.closeforest svg {
+  width: 100%;
+}
+.closeforestright {
+  position: absolute;
+  z-index: 190;
+  top: 54.5%;
+  left: 61%;
+  width: 45%;
+  transform: rotateZ(10deg);
+}
+.closeforestright svg {
+  width: 100%;
+}
+.mtforestleft {
+  position: absolute;
+  z-index: 170;
+  top: 76.3%;
+  left: -3.96%;
+  width: 35%;
+}
+.mtforestleft svg {
+  width: 100%;
+}
+.mtforestright {
+  position: absolute;
+  z-index: 180;
+  top: 50%;
+  right: 0;
+  width: 50%;
+}
+.mtforestright svg {
   width: 100%;
 }
