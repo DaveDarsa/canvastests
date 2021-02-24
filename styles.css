@@ -23,7 +23,7 @@ body {
   overflow: hidden;
   margin-bottom: 75%;
 }
-@keyframes bganimate {
+/* @keyframes bganimate {
   0% {
     background: linear-gradient(
       to top,
@@ -64,11 +64,11 @@ body {
     #9c75c6 100%
   ); */
 
-  /*early morning*/
-  background: linear-gradient(to top, #fffffe, #ffebda 65%, #ffd9cc 100%);
+/*early morning*/
+/* background: linear-gradient(to top, #fffffe, #ffebda 65%, #ffd9cc 100%); */
 
-  /*midday*/
-  /* background: linear-gradient(
+/*midday*/
+/* background: linear-gradient(
     to top,
     #c9f6ff,
     #97ebf4 45%,
@@ -77,16 +77,16 @@ body {
     #35d6ed 100%
   ); */
 
-  /*
+/*
   sunset:
     background: linear-gradient(to top, #882f7f, #412683 70%, #292369 100%);
   
   */
 
-  /* rain
+/* rain
   background: linear-gradient(to top, #98bdbd, #5c9ac7 35%, #6a899e);
   */
-  /* background: linear-gradient(
+/* background: linear-gradient(
     to top,
     #c9f6ff,
     #97ebf4 45%,
@@ -94,7 +94,7 @@ body {
     #65ddef 78%,
     #35d6ed 100%
   ); */
-  background: linear-gradient(
+/* background: linear-gradient(
     to top,
     #feebf8,
     #f1c7f1 45%,
@@ -104,10 +104,16 @@ body {
   width: 100%;
   height: 90%;
   opacity: 0.9;
-  z-index: 1;
-  /* animation: bganimate 10s ease-out infinite; */
-}
+  z-index: 1; */
+/* animation: bganimate 10s ease-out infinite; */
+/* } */
 
+.backgroundgradient {
+  width: 100%;
+  height: 95%;
+  opacity: 0.95;
+  z-index: 1;
+}
 .mt,
 .mtshadow {
   position: absolute;
@@ -116,7 +122,7 @@ body {
   height: auto;
   width: 100%;
   height: 20%;
-  z-index: 10;
+  z-index: 50;
   opacity: 1;
 }
 .mt svg,
