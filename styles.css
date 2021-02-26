@@ -114,49 +114,30 @@ body {
   opacity: 0.95;
   z-index: 1;
 }
-.mt,
-.mtshadow {
+
+.mountain {
   position: absolute;
-  top: 58%;
-  left: 0%;
+  top: 54.5%;
+  left: 0;
   height: auto;
   width: 100%;
   height: 20%;
   z-index: 50;
   opacity: 1;
 }
-.mt svg,
-.mtshadow svg {
+
+.mountain svg {
   width: 100%;
 }
 
 .fartrees {
   position: absolute;
-  top: 74%;
+  top: 78%;
   left: 31%;
-  z-index: 15;
+  z-index: 55;
   width: 39%;
 }
 .fartrees svg {
-  width: 100%;
-}
-
-.fartreesleft {
-  position: absolute;
-  width: 42%;
-  top: 46%;
-  left: 0;
-}
-.fartreesleft svg {
-  width: 100%;
-}
-.fartreesright {
-  position: absolute;
-  width: 44%;
-  top: 41%;
-  right: 0;
-}
-.fartreesright svg {
   width: 100%;
 }
 
@@ -189,7 +170,7 @@ body {
 }
 .water {
   position: absolute;
-  top: 84%;
+  top: 86%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -198,6 +179,110 @@ body {
 .water svg {
   width: 100%;
 }
+.waves {
+  background: #667e94;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 50px;
+  width: 20%;
+  z-index: 88000;
+}
+.waves svg {
+  width: 20px;
+}
+.firstwave,
+.secondwave {
+  z-index: 88000;
+  top: 35%;
+  left: -50%;
+  position: absolute;
+  width: 1px;
+}
+.firstwave {
+  animation: firstwave 40s ease-in-out forwards infinite;
+}
+.secondwave {
+  top: 40%;
+  animation: secondwave 40s ease-in-out forwards infinite;
+}
+@keyframes firstwave {
+  0% {
+    transform: translateY(2px);
+
+    left: -60%;
+  }
+  10% {
+    transform: translateY(-2px);
+  }
+  20% {
+    transform: translateY(2px);
+  }
+  30% {
+    transform: translateY(-2px);
+  }
+  40% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
+  70% {
+    transform: translateY(-2px);
+  }
+  80% {
+    transform: translateY(2px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+  100% {
+    left: 100%;
+    transform: translateY(2px);
+  }
+}
+
+@keyframes secondwave {
+  0% {
+    transform: translateY(-4px);
+    left: -62%;
+  }
+  10% {
+    transform: translateY(4px);
+  }
+  20% {
+    transform: translateY(-4px);
+  }
+  30% {
+    transform: translateY(4px);
+  }
+  40% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+  70% {
+    transform: translateY(4px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+  90% {
+    transform: translateY(4px);
+  }
+  100% {
+    left: 100%;
+    transform: translateY(-4px);
+  }
+}
+
 .firstview {
   position: absolute;
   bottom: -3.2%;
@@ -214,23 +299,23 @@ body {
   z-index: 300;
   width: 130%;
   bottom: -16%;
-  right: -84%;
-  transform: scaleX(-1) scale(0.8);
+  right: -75%;
+  transform: scaleX(-1) scale(0.7);
 }
 .firstviewleft {
   position: absolute;
   z-index: 300;
   width: 85%;
-  bottom: -13.5%;
-  left: -45.9%;
+  bottom: -15.5%;
+  left: -54%;
   transform: scale(0.9);
 }
 
 .leftgrass {
   position: absolute;
-  top: 78%;
-  left: 26%;
-  width: 20%;
+  top: 92%;
+  left: 22.5%;
+  width: 20.5%;
   z-index: 202;
 }
 .leftgrass svg {
@@ -240,7 +325,7 @@ body {
   position: absolute;
   top: 89%;
   left: 40.2%;
-  width: 22%;
+  width: 23%;
   z-index: 403;
 }
 .middlegrass svg {
@@ -249,7 +334,7 @@ body {
 .rightgrass {
   position: absolute;
   width: 20%;
-  top: 88%;
+  top: 89.5%;
   left: 56%;
   z-index: 301;
 }
@@ -258,10 +343,10 @@ body {
 }
 .closeforestleft {
   position: absolute;
-  top: 69.5%;
-  left: -10%;
-  width: 50%;
-  z-index: 190;
+  top: 70%;
+  left: -26%;
+  width: 67.5%;
+  z-index: 192;
 }
 .closeforestleft svg {
   width: 100%;
@@ -278,31 +363,22 @@ body {
 }
 .closeforestright {
   position: absolute;
-  z-index: 190;
-  top: 54.5%;
-  left: 61%;
-  width: 45%;
+  z-index: 192;
+  top: 45.5%;
+  left: 70%;
+  width: 50%;
   transform: rotateZ(10deg);
 }
 .closeforestright svg {
   width: 100%;
 }
-.mtforestleft {
-  position: absolute;
-  z-index: 170;
-  top: 76.3%;
-  left: -3.96%;
-  width: 35%;
-}
-.mtforestleft svg {
-  width: 100%;
-}
-.mtforestright {
+
+.mtright {
   position: absolute;
   z-index: 180;
-  top: 50%;
-  right: 0;
-  width: 50%;
+  top: 30%;
+  right: -27%;
+  width: 100%;
 }
 .mtforestright svg {
   width: 100%;
