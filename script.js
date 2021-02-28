@@ -21,6 +21,18 @@
 //   ctx.fillRect(50, 50, 100, 100);
 // };
 window.onload = () => {
-  var purr = document.querySelector("#purrframe");
-  console.log(purr);
+  // var purr = document.querySelector("#purrframe");
+  // console.log(purr);
+  console.log("test");
+  let sun = document.querySelector(".sunandmoon");
+  // function restartAnim() {
+  //   setTimeout(() => {
+  //     sun.style.animation = "suns 75s linear infinite forwards";
+  //   }, 25000);
+  // }
+
+  // setTimeout(() => {
+  //   sun.style.animation = "none";
+  //   restartAnim();
+  // }, 75000);
 };

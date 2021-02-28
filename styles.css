@@ -1,28 +1,62 @@
 body {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
 }
-.wrap {
-  position: relative;
-  top: 55%;
-  left: 50%;
-  height: 75vh;
-  width: 75vw;
-  min-width: 1450px;
-  transform: translate(-50%, -50%) scale(0.75);
+* {
+  box-sizing: border-box;
 }
-.container {
+.view {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  min-width: 1300px;
-  overflow: hidden;
-  margin-bottom: 75%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  position: relative;
 }
+.wrap {
+  background: url("images/resizedbg.png") no-repeat;
+  background-size: 135%;
+  background-position: 20% 60%;
+  height: 90vh;
+  width: 85vw;
+
+  /* transform: translate(-50%, -50%) scale(0.75); */
+}
+
+.container {
+  position: absolute;
+  top: 57.4vh;
+  left: 52.1%;
+  transform: translate(-50%, -50%) scale(0.81) scaleY(1.1);
+  width: 41.5vw;
+  height: 50%;
+  max-width: 41.5vw;
+
+  overflow: hidden;
+}
+.window {
+  position: absolute;
+  width: 50vw;
+  top: 34.5%;
+  left: 27.2%;
+  transform: scaleY(1.09);
+}
+.window svg {
+  width: 100%;
+}
+.couch {
+  position: relative;
+  top: 55.5vh;
+  left: 47.63vw;
+  display: inline-block;
+}
+.couch img {
+  width: 28.5vw;
+  display: inline-block;
+}
+
 /* @keyframes bganimate {
   0% {
     background: linear-gradient(
@@ -109,21 +143,25 @@ body {
 /* } */
 
 .backgroundgradient {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 95%;
-  opacity: 0.95;
+  height: 100%;
+  opacity: 1;
   z-index: 1;
 }
 
 .mountain {
   position: absolute;
-  top: 54.5%;
+  top: 50.9%;
   left: 0;
   height: auto;
   width: 100%;
   height: 20%;
   z-index: 50;
   opacity: 1;
+  transform: scaleY(1.3) scaleX(1.1);
 }
 
 .mountain svg {
@@ -132,10 +170,11 @@ body {
 
 .fartrees {
   position: absolute;
-  top: 78%;
+  top: 74.5%;
   left: 31%;
   z-index: 55;
   width: 39%;
+  transform: scale(1.2);
 }
 .fartrees svg {
   width: 100%;
@@ -170,7 +209,7 @@ body {
 }
 .water {
   position: absolute;
-  top: 86%;
+  top: 80%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -285,9 +324,9 @@ body {
 
 .firstview {
   position: absolute;
-  bottom: -3.2%;
-  left: 0;
-  width: 110%;
+  bottom: -2%;
+  left: -20%;
+  width: 145%;
   z-index: 200;
 }
 .firstview svg {
@@ -297,25 +336,25 @@ body {
 .firstviewright {
   position: absolute;
   z-index: 300;
-  width: 130%;
-  bottom: -16%;
-  right: -75%;
+  width: 165%;
+  bottom: -18%;
+  right: -104%;
   transform: scaleX(-1) scale(0.7);
 }
 .firstviewleft {
   position: absolute;
   z-index: 300;
-  width: 85%;
+  width: 100%;
   bottom: -15.5%;
-  left: -54%;
+  left: -62.4%;
   transform: scale(0.9);
 }
 
 .leftgrass {
   position: absolute;
-  top: 92%;
-  left: 22.5%;
-  width: 20.5%;
+  top: 90%;
+  left: 10.5%;
+  width: 30.5%;
   z-index: 202;
 }
 .leftgrass svg {
@@ -323,9 +362,9 @@ body {
 }
 .middlegrass {
   position: absolute;
-  top: 89%;
-  left: 40.2%;
-  width: 23%;
+  top: 86%;
+  left: 35.2%;
+  width: 32%;
   z-index: 403;
 }
 .middlegrass svg {
@@ -333,7 +372,7 @@ body {
 }
 .rightgrass {
   position: absolute;
-  width: 20%;
+  width: 23%;
   top: 89.5%;
   left: 56%;
   z-index: 301;
@@ -343,20 +382,22 @@ body {
 }
 .closeforestleft {
   position: absolute;
-  top: 70%;
-  left: -26%;
+  top: 64%;
+  left: -55%;
   width: 67.5%;
   z-index: 192;
+  transform: scale(1.49);
 }
 .closeforestleft svg {
   width: 100%;
 }
 .closeforest {
   position: absolute;
-  top: 79%;
-  left: 29%;
+  top: 75.5%;
+  left: 25%;
   width: 43%;
   z-index: 191;
+  transform: scale(1.5);
 }
 .closeforest svg {
   width: 100%;
@@ -364,10 +405,10 @@ body {
 .closeforestright {
   position: absolute;
   z-index: 192;
-  top: 45.5%;
+  top: 55.5%;
   left: 70%;
   width: 50%;
-  transform: rotateZ(10deg);
+  transform: rotateZ(10deg) scale(1.9);
 }
 .closeforestright svg {
   width: 100%;
@@ -376,7 +417,7 @@ body {
 .mtright {
   position: absolute;
   z-index: 180;
-  top: 30%;
+  top: 35%;
   right: -27%;
   width: 100%;
 }
@@ -439,14 +480,129 @@ body {
 
   animation: animate 4.5s cubic-bezier(0.45, 0.5, 0.63, 0.69) infinite backwards;
 }
-
-.window {
+/* testing ground*/
+.containertest {
   position: absolute;
-  z-index: 500;
-  width: 120%;
-  top: -3.5%;
-  left: -10%;
+  top: 0;
+  left: 0;
+  margin-left: auto;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 5000;
+  overflow: hidden;
 }
-.window svg {
-  width: 100%;
+body {
+  overflow: hidden;
+}
+
+@keyframes suns {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  /* 30% {
+    width: 50vw;
+    margin-left: 25vw;
+  } */
+
+  /* 60% {
+    width: 50vw;
+    margin-left: 25vw;
+  } */
+
+  100% {
+    transform: rotate(-380deg);
+  }
+}
+/* @keyframes objectmove {
+  0% {
+    right: 0;
+  }
+  50% {
+    right: 30%;
+  }
+  100% {
+    right: 0;
+  }
+} */
+.suncont,
+.mooncont {
+  width: 28vw;
+  margin-left: 50vw;
+  margin-top: 60vh;
+  height: 20px;
+  position: relative;
+  transform-origin: 0 50%;
+  animation: suns 150s linear infinite forwards;
+  z-index: 10;
+}
+.mooncont {
+  margin-top: 0;
+  animation-delay: 75s;
+}
+
+.sun {
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5vw;
+  height: 5vw;
+  z-index: 1;
+  filter: blur(3px);
+  /* background-color: yellow; */
+  /* background: radial-gradient(
+    circle,
+    #ffffff 25%,
+    #ffe484 65%,
+    #ffcc33 95%,
+    #fc9601 100%
+  ); */
+
+  background: radial-gradient(circle, #fff2cc 15%, #ffd966 70%, #fc9601 100%);
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.9;
+  }
+  30% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+.sunpulse {
+  content: "";
+  position: absolute;
+  width: 2.5vw;
+  height: 2.5vw;
+  top: 1.25vw;
+  left: 1.25vw;
+  /* transform: translate(-50%, -50%); */
+  border-radius: 50%;
+  z-index: -1;
+  background-color: #fff2cc;
+  animation: pulse 2s ease infinite forwards;
+}
+/* animation: objectmove 1.5s linear infinite forwards; */
+
+.moon {
+  position: absolute;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+  width: 5vw;
+  height: 5vw;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 1px 60px 0px rgba(253, 253, 253, 1);
+}
+.moon svg {
+  display: block;
+  margin: auto;
+  width: 111%;
+  transform: translateY(-11%) translateX(-5.5%);
 }
