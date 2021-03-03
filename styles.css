@@ -337,7 +337,7 @@ body {
   position: absolute;
   z-index: 300;
   width: 165%;
-  bottom: -18%;
+  bottom: -20%;
   right: -104%;
   transform: scaleX(-1) scale(0.7);
 }
@@ -365,7 +365,7 @@ body {
   top: 86%;
   left: 35.2%;
   width: 32%;
-  z-index: 403;
+  z-index: 303;
 }
 .middlegrass svg {
   width: 100%;
@@ -647,11 +647,18 @@ body {
     opacity: 0;
   }
 }
-.starcanvass {
+.starcanvas {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 5;
+}
+
+.raincanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 400;
 }
 /* .lol {
   width: 100px;

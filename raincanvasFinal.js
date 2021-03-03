@@ -1,14 +1,14 @@
 window.onload = (e) => {
+  //gotta return init and animate functions with firstrun variable once i modularize this;
   const canvas = document.getElementById("raincanvas");
-  canvas.height = window.innerHeight / 1.5;
-  canvas.width = window.innerWidth / 1.1;
-  canvas.style.border = "2px solid black";
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
   var ctx = canvas.getContext("2d");
   var firstRun = true;
 
   function splash(x, y) {
     this.x = x;
-    this.y = y;
+    this.y = y + 2;
     this.velocity = {
       x: Math.floor(Math.random() * 11) - 4,
       y: Math.floor(Math.random() * 5) - 5,
@@ -17,8 +17,9 @@ window.onload = (e) => {
     this.gravity = 2;
 
     splash.prototype.draw = function () {
-      ctx.fillStyle = "rgb(59,98,128)";
-      ctx.fillStyle = "rgba(255,255,255,.1)";
+      ctx.fillStyle = "rgba(78, 131, 181,.5)";
+      ctx.fillStyle = "rgba(255,255,255,.35)";
+      ctx.fillStyle = "rgba(147, 176, 204,.4)";
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
       ctx.fill();
@@ -28,7 +29,7 @@ window.onload = (e) => {
       // this.x += this.velocity.x;
       // this.y += this.velocity.y;
       this.x += this.velocity.x;
-      this.y += this.velocity.y + this.gravity;
+      this.y += this.velocity.y + (this.gravity * 1) / 2;
       let idx = splashes.indexOf(this);
 
       setTimeout(() => {
@@ -51,11 +52,12 @@ window.onload = (e) => {
     drop.prototype.draw = function () {
       // ctx.fillStyle = "rgba(52, 96, 138,.8)";
       // ctx.fillRect(this.x, this.y, this.width, this.height);
-      ctx.strokeStyle = "rgba(52,96,138,.5)";
-      ctx.strokeStyle = "rgba(255,255,255,.1)";
+      ctx.strokeStyle = "rgba(52,96,138,.4)";
+      ctx.strokeStyle = "rgba(255,255,255,.3)";
+      ctx.fillStyle = "rgba(143, 190, 235,.8)";
       ctx.beginPath();
       ctx.moveTo(this.x, this.y);
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 1.5;
       ctx.lineTo(this.x - this.height, this.y + this.height);
       ctx.stroke();
     };
@@ -100,13 +102,19 @@ window.onload = (e) => {
       rain.push(new drop(i));
     }
   }
+  //resize
+  window.addEventListener("resize", () => {
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    init();
+  });
 
   //animation
   function animate() {
     requestAnimationFrame(animate);
 
     ctx.fillStyle = "rgba(100, 100, 150,.8)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     rain.forEach((drop) => {
       drop.update();
     });
