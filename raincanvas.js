@@ -1,0 +1,124 @@
+window.onload = (e) => {
+  const canvas = document.getElementById("raincanvas");
+  canvas.height = window.innerHeight / 1.5;
+  canvas.width = window.innerWidth / 1.1;
+  canvas.style.border = "2px solid black";
+  var ctx = canvas.getContext("2d");
+  var firstRun = true;
+
+  function splash(x, y) {
+    this.x = x;
+    this.y = y;
+    this.velocity = {
+      x: Math.floor(Math.random() * 11) - 4,
+      y: Math.floor(Math.random() * 5) - 5,
+    };
+    this.r = Math.random() * 1 + 1.5;
+    this.gravity = 2;
+
+    splash.prototype.draw = function () {
+      ctx.fillStyle = "rgb(59,98,128)";
+      ctx.fillStyle = "rgba(255,255,255,.1)";
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+      ctx.fill();
+    };
+    splash.prototype.update = function () {
+      this.draw();
+      // this.x += this.velocity.x;
+      // this.y += this.velocity.y;
+      this.x += this.velocity.x;
+      this.y += this.velocity.y + this.gravity;
+      let idx = splashes.indexOf(this);
+
+      setTimeout(() => {
+        splashes.splice(idx, 1);
+      }, 100);
+      // let idx = splasharray.indexOf(this);
+      // setTimeout(() => {
+      //   splasharray.splice(idx, 1);
+      // }, 10);
+    };
+  }
+
+  function drop(pos) {
+    this.arrpos = pos;
+    this.width = 2;
+    this.height = Math.random() * 5 + 30;
+    this.x = Math.random() * (window.innerWidth + 1000);
+    this.y = firstRun ? Math.random() * canvas.height : Math.random() - 0.5;
+    this.d = Math.random() * 15 + 10;
+    drop.prototype.draw = function () {
+      // ctx.fillStyle = "rgba(52, 96, 138,.8)";
+      // ctx.fillRect(this.x, this.y, this.width, this.height);
+      ctx.strokeStyle = "rgba(52,96,138,.5)";
+      ctx.strokeStyle = "rgba(255,255,255,.1)";
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.lineWidth = 2;
+      ctx.lineTo(this.x - this.height, this.y + this.height);
+      ctx.stroke();
+    };
+    //FIX THIS DURING ANIMATION
+    // drop.prototype.handlesplash = function () {
+    //   for (let i = 0; i < 3; i++) {
+    //     new splash(this.x, this.y).update();
+    //   }
+    // };
+    drop.prototype.update = function () {
+      //update then draw;
+      this.y += this.d;
+      this.x += -this.d;
+      //water interaction with the land
+      if (this.y + this.height > canvas.height - 5) {
+        for (let k = 0; k < 5; k++) {
+          splashes.push(new splash(this.x, this.y));
+        }
+      }
+      //collision detection and removal.
+      if (this.y + this.height > canvas.height || this.x - 2 < 0) {
+        //replace itself with new one;
+        // setTimeout(() => {
+        //   rain[this.arrpos] = new drop(this.arrpos);
+        // }, 1500);
+        rain[this.arrpos] = new drop(this.arrpos);
+      }
+      //collision detection:
+
+      this.draw();
+    };
+  }
+
+  let rain = [];
+  let splashes = [];
+  //init function
+  function init() {
+    //create and add rain elements customized;
+    rain = [];
+    splashes = [];
+    for (let i = 0; i < 100; i++) {
+      rain.push(new drop(i));
+    }
+  }
+
+  //animation
+  function animate() {
+    requestAnimationFrame(animate);
+
+    ctx.fillStyle = "rgba(100, 100, 150,.8)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    rain.forEach((drop) => {
+      drop.update();
+    });
+    splashes.forEach((splashs) => {
+      splashs.update();
+    });
+    // splasharray.forEach((singlesplash) => {
+    //   singlesplash.update();
+    // });
+    firstRun = false;
+  }
+
+  init();
+  animate();
+};

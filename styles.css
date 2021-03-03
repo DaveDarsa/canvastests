@@ -209,7 +209,7 @@ body {
 }
 .water {
   position: absolute;
-  top: 80%;
+  top: 82%;
   left: 0;
   width: 100%;
   height: 100%;
@@ -393,7 +393,7 @@ body {
 }
 .closeforest {
   position: absolute;
-  top: 75.5%;
+  top: 74.5%;
   left: 25%;
   width: 43%;
   z-index: 191;
@@ -549,8 +549,8 @@ body {
   right: 0;
   width: 5vw;
   height: 5vw;
-  z-index: 1;
-  filter: blur(3px);
+  z-index: 10;
+  filter: blur(1px);
   /* background-color: yellow; */
   /* background: radial-gradient(
     circle,
@@ -598,6 +598,7 @@ body {
   height: 5vw;
   padding: 0;
   margin: 0;
+  z-index: 10;
   box-shadow: 0px 1px 60px 0px rgba(253, 253, 253, 1);
 }
 .moon svg {
@@ -606,3 +607,60 @@ body {
   width: 111%;
   transform: translateY(-11%) translateX(-5.5%);
 }
+.reflections {
+  position: absolute;
+  background-color: green;
+
+  z-index: 160;
+  top: 82%;
+  left: 65%;
+  width: 5vw;
+  height: 15vh;
+  clip-path: polygon(35% 0, 75% 0, 65% 100%, 25% 100%);
+}
+.sunreflection {
+  position: absolute;
+  background-color: blue;
+  width: 5vw;
+  top: 0;
+  right: 0;
+  height: 15vh;
+  clip-path: polygon(35% 0, 75% 0, 65% 100%, 25% 100%);
+}
+.moonreflection {
+}
+
+@keyframes showstars {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hidestars {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.starcanvass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+/* .lol {
+  width: 100px;
+  height: 150px;
+  background-color: green;
+  position: absolute;
+  z-index: 0;
+}
+#raincanvas {
+  position: absolute;
+  z-index: -1;
+} */
