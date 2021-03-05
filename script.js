@@ -8,7 +8,8 @@ window.onload = () => {
   Starcanvas.init();
   Starcanvas.animate();
   //init on resize
-  Fireflies.start();
+  Fireflies.init();
+  Fireflies.animate();
 
   Raincanvas.init();
   Raincanvas.animate();

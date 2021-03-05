@@ -5,6 +5,7 @@ export const Fireflies = (function firefliescanvas() {
   canvas.height = container.offsetHeight;
   canvas.width = container.offsetWidth;
 
+  let day = false;
   let fireflies = [];
   function randomFromRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -19,13 +20,13 @@ export const Fireflies = (function firefliescanvas() {
       y: (Math.random() - 0.5) * 0.5,
     };
     this.max = {
-      xbound: this.x + 10,
-      ybound: canvas.height / 2,
+      xbound: this.x + 20,
+      ybound: canvas.height / 2.5,
       maxRadius: this.radius + 3,
     };
     this.min = {
-      xbound: this.x - 10,
-      ybound: this.y - 100,
+      xbound: this.x - 5,
+      ybound: this.y - 30,
       minRadius: this.radius,
     };
 
@@ -76,18 +77,19 @@ export const Fireflies = (function firefliescanvas() {
     ctx.fillStyle = "rgb(2,17,28)";
     ctx.shadowBlur = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    fireflies.forEach((firefly) => {
-      firefly.update();
-    });
+    if (day) {
+      fireflies.forEach((firefly) => {
+        firefly.update();
+      });
+    }
   }
-  function start() {
-    setTimeout(() => {
-      init();
-      animate();
-    }, 75000);
-  }
+  setInterval(() => {
+    day = !day;
+    init();
+  }, 75000);
+
   return {
-    start,
+    animate,
     init,
   };
 })();
