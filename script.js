@@ -1,6 +1,6 @@
-import { Starcanvas } from "./starcanvasFinal.js";
-import { Fireflies } from "./fireflies.js";
-import { Raincanvas } from "./raincanvasFinal.js";
+import { Starcanvas } from "./canvasscripts/starcanvasFinal.js";
+import { Fireflies } from "./canvasscripts/fireflies.js";
+import { Raincanvas } from "./canvasscripts/raincanvasFinal.js";
 
 window.onload = () => {
   console.log("working");
