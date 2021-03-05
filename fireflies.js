@@ -1,10 +1,10 @@
-(function firefliescanvas() {
+export const Fireflies = (function firefliescanvas() {
+  const container = document.getElementById("animcontainer");
   var canvas = document.getElementById("fireflies");
   var ctx = canvas.getContext("2d");
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+  canvas.height = container.offsetHeight;
+  canvas.width = container.offsetWidth;
 
-  let day = false;
   let fireflies = [];
   function randomFromRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -59,12 +59,18 @@
   }
 
   function init() {
+    fireflies = [];
     for (let i = 0; i < 50; i++) {
       fireflies.push(new firefly());
     }
     console.log(fireflies);
   }
 
+  window.addEventListener("resize", () => {
+    canvas.height = container.offsetHeight;
+    canvas.width = container.offsetWidth;
+    init();
+  });
   function animate() {
     requestAnimationFrame(animate);
     ctx.fillStyle = "rgb(2,17,28)";
@@ -74,8 +80,14 @@
       firefly.update();
     });
   }
-  setTimeout(() => {
-    init();
-    animate();
-  }, 1000);
+  function start() {
+    setTimeout(() => {
+      init();
+      animate();
+    }, 75000);
+  }
+  return {
+    start,
+    init,
+  };
 })();

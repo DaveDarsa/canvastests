@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 * {
   box-sizing: border-box;
@@ -33,7 +34,6 @@ body {
   width: 41.5vw;
   height: 50%;
   max-width: 41.5vw;
-
   overflow: hidden;
 }
 .window {
@@ -56,91 +56,6 @@ body {
   width: 28.5vw;
   display: inline-block;
 }
-
-/* @keyframes bganimate {
-  0% {
-    background: linear-gradient(
-      to top,
-      #feebf8,
-      #f1c7f1 45%,
-      #c999e5 75%,
-      #9c75c6 100%
-    );
-  }
-  35% {
-    background: linear-gradient(to top, #fffffe, #ffebda 65%, #ffd9cc 100%);
-  }
-  70% {
-    background: linear-gradient(
-      to top,
-      #c9f6ff,
-      #97ebf4 45%,
-      #7ae5f5 65%,
-      #65ddef 78%,
-      #35d6ed 100%
-    );
-  }
-  100% {
-    background: linear-gradient(to top, #882f7f, #412683 70%, #292369 100%);
-  }
-}
-.testing {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /*
-    sunrise
-    background: linear-gradient(
-    to top,
-    #feebf8,
-    #f1c7f1 45%,
-    #c999e5 75%,
-    #9c75c6 100%
-  ); */
-
-/*early morning*/
-/* background: linear-gradient(to top, #fffffe, #ffebda 65%, #ffd9cc 100%); */
-
-/*midday*/
-/* background: linear-gradient(
-    to top,
-    #c9f6ff,
-    #97ebf4 45%,
-    #7ae5f5 65%,
-    #65ddef 78%,
-    #35d6ed 100%
-  ); */
-
-/*
-  sunset:
-    background: linear-gradient(to top, #882f7f, #412683 70%, #292369 100%);
-  
-  */
-
-/* rain
-  background: linear-gradient(to top, #98bdbd, #5c9ac7 35%, #6a899e);
-  */
-/* background: linear-gradient(
-    to top,
-    #c9f6ff,
-    #97ebf4 45%,
-    #7ae5f5 65%,
-    #65ddef 78%,
-    #35d6ed 100%
-  ); */
-/* background: linear-gradient(
-    to top,
-    #feebf8,
-    #f1c7f1 45%,
-    #c999e5 75%,
-    #9c75c6 100%
-  );
-  width: 100%;
-  height: 90%;
-  opacity: 0.9;
-  z-index: 1; */
-/* animation: bganimate 10s ease-out infinite; */
-/* } */
 
 .backgroundgradient {
   position: absolute;
@@ -425,65 +340,10 @@ body {
   width: 100%;
 }
 
-@keyframes animate {
+@keyframes moveobjects {
   0% {
-    transform: rotateZ(-55deg) rotateX(10deg) skew(-3deg);
-  }
-  20% {
-    transform: rotateZ(0deg);
-  }
-  /* 22% {
-    background: url("./imgs/tail3.svg") no-repeat;
-  } */
-
-  50% {
-    transform: rotateZ(45deg) rotateY(10deg) rotateX(-15deg) skewY(5deg);
-
-    /* background: url("./imgs/tail3.svg") no-repeat;
-    transform-origin: 100px 200px; */
-  }
-  100% {
-    transform: rotateZ(-55deg);
-  }
-  /* 60% {
-    transform: rotateZ(250deg);
-  } */
-  /* 50% {
-    transform: rotateZ(200deg);
-  }
-  100% {
-    transform: rotateZ(250deg);
-  } */
-}
-.test {
-  position: absolute;
-  top: 100%;
-  left: 25%;
-  border: 1px solid sienna;
-  width: 50%;
-  height: 800px;
-  transform: scale(0.5);
-}
-
-/* testing ground*/
-.containertest {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-left: auto;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 5000;
-  overflow: hidden;
-}
-body {
-  overflow: hidden;
-}
-
-@keyframes suns {
-  0% {
-    transform: rotate(-20deg);
+    transform: rotate(0deg);
+    opacity: 1;
   }
 
   /* 30% {
@@ -497,29 +357,20 @@ body {
   } */
 
   100% {
-    transform: rotate(-380deg);
+    transform: rotate(-360deg);
   }
 }
-/* @keyframes objectmove {
-  0% {
-    right: 0;
-  }
-  50% {
-    right: 30%;
-  }
-  100% {
-    right: 0;
-  }
-} */
+
 .suncont,
 .mooncont {
-  width: 28vw;
-  margin-left: 50vw;
-  margin-top: 60vh;
+  width: 31%;
+  position: absolute;
+  top: 65%;
+  left: 51%;
   height: 20px;
-  position: relative;
   transform-origin: 0 50%;
-  animation: suns 150s linear infinite forwards;
+  z-index: 10000;
+  animation: moveobjects 150s linear infinite forwards;
   z-index: 10;
 }
 .mooncont {
@@ -532,19 +383,10 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 5vw;
-  height: 5vw;
+  width: 3vw;
+  height: 3vw;
   z-index: 10;
   filter: blur(1px);
-  /* background-color: yellow; */
-  /* background: radial-gradient(
-    circle,
-    #ffffff 25%,
-    #ffe484 65%,
-    #ffcc33 95%,
-    #fc9601 100%
-  ); */
-
   background: radial-gradient(circle, #fff2cc 15%, #ffd966 70%, #fc9601 100%);
 }
 @keyframes pulse {
@@ -562,25 +404,22 @@ body {
 .sunpulse {
   content: "";
   position: absolute;
-  width: 2.5vw;
-  height: 2.5vw;
-  top: 1.25vw;
-  left: 1.25vw;
-  /* transform: translate(-50%, -50%); */
+  width: 1.5vw;
+  height: 1.5vw;
+  top: 0.75vw;
+  left: 0.75vw;
   border-radius: 50%;
   z-index: -1;
   background-color: #fff2cc;
   animation: pulse 2s ease infinite forwards;
 }
-/* animation: objectmove 1.5s linear infinite forwards; */
-
 .moon {
   position: absolute;
   border-radius: 50%;
   bottom: 0;
   right: 0;
-  width: 5vw;
-  height: 5vw;
+  width: 3vw;
+  height: 3vw;
   padding: 0;
   margin: 0;
   z-index: 10;
@@ -595,7 +434,6 @@ body {
 .reflections {
   position: absolute;
   background-color: green;
-
   z-index: 160;
   top: 82%;
   left: 65%;
@@ -651,7 +489,6 @@ body {
 .tail-segment {
   background-color: #000000;
   position: absolute;
-
   height: 20px;
   border-radius: 25px;
   top: 0;
@@ -659,28 +496,6 @@ body {
   transform: rotate(-10deg);
   animation: tail-swish 5s infinite cubic-bezier(0.8, 0, 0.2, 1);
 }
-
-@keyframes tail-swish {
-  0% {
-    transform: rotate(12deg);
-  }
-  10% {
-    transform: rotate(12deg);
-  }
-  40% {
-    transform: rotate(-5deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-  60% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(12deg);
-  }
-}
-
 .cat {
   position: absolute;
   width: 50px;
@@ -714,7 +529,6 @@ body {
   border-radius: 235px;
   -webkit-font-smoothing: antialiased;
   left: 8px;
-  /*transform: rotate(10deg);*/
   animation: tail-swish 5s infinite cubic-bezier(0.8, 0, 0.2, 1);
 }
 
@@ -738,20 +552,3 @@ body {
     transform: rotate(8deg);
   }
 }
-
-/* .tail {
-  position: absolute;
-  display: block;
-  width: 60px;
-  height: 222px;
-  padding: 0;
-  margin: 0;
-  top: 40%;
-  left: 8%;
-  text-align: center;
-  transform-origin: top center;
-  background: url("./imgs/tail2.svg") no-repeat;
-  transform: rotate(0);
-
-  animation: animate 4.5s cubic-bezier(0.45, 0.5, 0.63, 0.69) infinite backwards;
-} */

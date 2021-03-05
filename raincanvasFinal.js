@@ -1,8 +1,8 @@
-window.onload = (e) => {
-  //gotta return init and animate functions with firstrun variable once i modularize this;
+export const Raincanvas = (function () {
+  const container = document.getElementById("animcontainer");
   const canvas = document.getElementById("raincanvas");
-  canvas.height = window.innerHeight;
-  canvas.width = window.innerWidth;
+  canvas.height = container.offsetHeight;
+  canvas.width = container.offsetWidth;
   var ctx = canvas.getContext("2d");
   var firstRun = true;
 
@@ -26,8 +26,7 @@ window.onload = (e) => {
     };
     splash.prototype.update = function () {
       this.draw();
-      // this.x += this.velocity.x;
-      // this.y += this.velocity.y;
+
       this.x += this.velocity.x;
       this.y += this.velocity.y + (this.gravity * 1) / 2;
       let idx = splashes.indexOf(this);
@@ -35,10 +34,6 @@ window.onload = (e) => {
       setTimeout(() => {
         splashes.splice(idx, 1);
       }, 100);
-      // let idx = splasharray.indexOf(this);
-      // setTimeout(() => {
-      //   splasharray.splice(idx, 1);
-      // }, 10);
     };
   }
 
@@ -46,7 +41,7 @@ window.onload = (e) => {
     this.arrpos = pos;
     this.width = 2;
     this.height = Math.random() * 5 + 30;
-    this.x = Math.random() * (window.innerWidth + 1000);
+    this.x = Math.random() * (container.offsetWidth + 1000);
     this.y = firstRun ? Math.random() * canvas.height : Math.random() - 0.5;
     this.d = Math.random() * 15 + 10;
     drop.prototype.draw = function () {
@@ -61,12 +56,7 @@ window.onload = (e) => {
       ctx.lineTo(this.x - this.height, this.y + this.height);
       ctx.stroke();
     };
-    //FIX THIS DURING ANIMATION
-    // drop.prototype.handlesplash = function () {
-    //   for (let i = 0; i < 3; i++) {
-    //     new splash(this.x, this.y).update();
-    //   }
-    // };
+
     drop.prototype.update = function () {
       //update then draw;
       this.y += this.d;
@@ -80,13 +70,8 @@ window.onload = (e) => {
       //collision detection and removal.
       if (this.y + this.height > canvas.height || this.x - 2 < 0) {
         //replace itself with new one;
-        // setTimeout(() => {
-        //   rain[this.arrpos] = new drop(this.arrpos);
-        // }, 1500);
         rain[this.arrpos] = new drop(this.arrpos);
       }
-      //collision detection:
-
       this.draw();
     };
   }
@@ -98,14 +83,14 @@ window.onload = (e) => {
     //create and add rain elements customized;
     rain = [];
     splashes = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 80; i++) {
       rain.push(new drop(i));
     }
   }
   //resize
   window.addEventListener("resize", () => {
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+    canvas.height = container.offsetHeight;
+    canvas.width = container.offsetWidth;
     init();
   });
 
@@ -121,12 +106,11 @@ window.onload = (e) => {
     splashes.forEach((splashs) => {
       splashs.update();
     });
-    // splasharray.forEach((singlesplash) => {
-    //   singlesplash.update();
-    // });
+
     firstRun = false;
   }
-
-  init();
-  animate();
-};
+  return {
+    init,
+    animate,
+  };
+})();
