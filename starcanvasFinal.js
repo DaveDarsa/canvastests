@@ -9,7 +9,7 @@ export const Starcanvas = (function starcanvas() {
   function star() {
     this.x = Math.random() * canvas.width;
     this.y = Math.random() * canvas.height;
-    this.r = Math.abs(Math.random()) + 0.5;
+    this.r = Math.abs(Math.random()) + 0.3;
 
     star.prototype.draw = function () {
       ctx.fillStyle = "rgba(255,255,255,.8)";
