@@ -73,7 +73,7 @@ window.onload = (e) => {
       this.x += -this.d;
       //water interaction with the land
       if (this.y + this.height > canvas.height - 5) {
-        for (let k = 0; k < 5; k++) {
+        for (let k = 0; k < 3; k++) {
           splashes.push(new splash(this.x, this.y));
         }
       }

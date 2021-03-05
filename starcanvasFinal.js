@@ -1,6 +1,6 @@
 // window.onload = () => {
 //gotta make sure this module returns init and animate functions along with  paused and day variables for controls.
-
+// export const Starcanvas = (function starcanvas() {
 let canvas = document.getElementById("starcanvas");
 let ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
@@ -63,13 +63,15 @@ let comets = [];
 function init() {
   comets = [];
   stars = [];
-  for (let i = 0; i < 280; i++) {
+  for (let i = 0; i < 240; i++) {
     stars.push(new star());
   }
 }
 //create new comet
 setInterval(() => {
-  comets.push(new comet());
+  if (!day) {
+    comets.push(new comet());
+  }
 }, 10000);
 //clear the comets
 setInterval(() => {
@@ -111,4 +113,11 @@ function animate() {
 }
 init();
 animate();
-// };
+
+//   return {
+//     init,
+//     animate,
+//     paused,
+//     day,
+//   };
+// })();

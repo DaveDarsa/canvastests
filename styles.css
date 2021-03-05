@@ -345,7 +345,7 @@ body {
   position: absolute;
   z-index: 300;
   width: 100%;
-  bottom: -15.5%;
+  bottom: -18.5%;
   left: -62.4%;
   transform: scale(0.9);
 }
@@ -464,22 +464,7 @@ body {
   height: 800px;
   transform: scale(0.5);
 }
-.tail {
-  position: absolute;
-  display: block;
-  width: 60px;
-  height: 222px;
-  padding: 0;
-  margin: 0;
-  top: 40%;
-  left: 8%;
-  text-align: center;
-  transform-origin: top center;
-  background: url("./imgs/tail2.svg") no-repeat;
-  transform: rotate(0);
 
-  animation: animate 4.5s cubic-bezier(0.45, 0.5, 0.63, 0.69) infinite backwards;
-}
 /* testing ground*/
 .containertest {
   position: absolute;
@@ -630,23 +615,6 @@ body {
 .moonreflection {
 }
 
-@keyframes showstars {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes hidestars {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 .starcanvas {
   position: absolute;
   top: 0;
@@ -660,14 +628,130 @@ body {
   left: 0;
   z-index: 400;
 }
-/* .lol {
-  width: 100px;
-  height: 150px;
-  background-color: green;
+.fireflies {
   position: absolute;
-  z-index: 0;
+  top: 0;
+  left: 0;
+  z-index: 350;
 }
-#raincanvas {
+
+.tail {
   position: absolute;
-  z-index: -1;
+  top: 10;
+  left: 0;
+  z-index: 400;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  text-align: center;
+}
+.tail * {
+  transform: rotate(90deg);
+}
+.tail-segment {
+  background-color: #000000;
+  position: absolute;
+
+  height: 20px;
+  border-radius: 25px;
+  top: 0;
+  left: 50;
+  transform: rotate(-10deg);
+  animation: tail-swish 5s infinite cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+@keyframes tail-swish {
+  0% {
+    transform: rotate(12deg);
+  }
+  10% {
+    transform: rotate(12deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(12deg);
+  }
+}
+
+.cat {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 65%;
+  left: 60%;
+}
+.cat img {
+  width: 80px;
+  position: absolute;
+  display: block;
+  z-index: 500;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tail {
+  left: 30%;
+  top: 250%;
+  transform: rotate(90deg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.tail-segment {
+  background-color: #000000;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15px;
+  width: 20px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 235px;
+  -webkit-font-smoothing: antialiased;
+  left: 8px;
+  /*transform: rotate(10deg);*/
+  animation: tail-swish 5s infinite cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+@keyframes tail-swish {
+  0% {
+    transform: rotate(8deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+/* .tail {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 222px;
+  padding: 0;
+  margin: 0;
+  top: 40%;
+  left: 8%;
+  text-align: center;
+  transform-origin: top center;
+  background: url("./imgs/tail2.svg") no-repeat;
+  transform: rotate(0);
+
+  animation: animate 4.5s cubic-bezier(0.45, 0.5, 0.63, 0.69) infinite backwards;
 } */
