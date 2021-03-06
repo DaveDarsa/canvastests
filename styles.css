@@ -260,7 +260,7 @@ body {
   position: absolute;
   z-index: 300;
   width: 100%;
-  bottom: -18.5%;
+  bottom: -15%;
   left: -62.4%;
   transform: scale(0.9);
 }
@@ -420,25 +420,6 @@ body {
   width: 111%;
   transform: translateY(-11%) translateX(-5.5%);
 }
-.reflections {
-  position: absolute;
-  background-color: green;
-  z-index: 160;
-  top: 82%;
-  left: 65%;
-  width: 5vw;
-  height: 15vh;
-  clip-path: polygon(35% 0, 75% 0, 65% 100%, 25% 100%);
-}
-.sunreflection {
-  position: absolute;
-  background-color: blue;
-  width: 5vw;
-  top: 0;
-  right: 0;
-  height: 15vh;
-  clip-path: polygon(35% 0, 75% 0, 65% 100%, 25% 100%);
-}
 
 .starcanvas {
   position: absolute;
@@ -538,4 +519,159 @@ body {
   100% {
     transform: rotate(8deg);
   }
+}
+
+@keyframes reflectionmove {
+  from {
+    left: 60%;
+  }
+  to {
+    left: 20%;
+  }
+}
+.reflections {
+  position: absolute;
+  padding: 0 1.5rem;
+  z-index: 160;
+  top: 82%;
+  left: 65%;
+  width: 5vw;
+  height: 5vh;
+  clip-path: polygon(35% 0, 75% 0, 65% 100%, 25% 100%);
+  transform: skew(-20deg, 0deg);
+  animation: reflectionmove 75s linear alternate infinite;
+}
+.sunreflection {
+  position: absolute;
+  width: 2vw;
+  top: 0;
+  right: 0;
+  height: 5vh;
+  /* clip-path: polygon(35% 0, 75% 0, 65% 100%, 25% 100%); */
+}
+
+.sunreflection {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  transform: rotateZ(6deg);
+}
+.sunreflection li {
+  padding-left: 20%;
+  width: 70%;
+  margin-left: 8px;
+}
+.sunreflection li:nth-child(odd) {
+  /* align-self: flex-end; */
+  margin-left: 20px;
+}
+.sunreflection li:nth-child(odd) img {
+  animation: sparkle 0.5s ease-out infinite alternate;
+  width: 15%;
+  margin-top: 3px;
+}
+.sunreflection li:nth-child(even) img {
+  animation: sparkle 0.4s ease-in-out infinite alternate;
+  margin-top: 1px;
+  width: 13%;
+}
+.sunreflection li img {
+  display: block;
+  margin: auto;
+}
+@keyframes sparkle {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+
+  15% {
+    opacity: 1;
+  }
+  16.5% {
+    opacity: 0.2;
+  }
+  16.6% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.deer1 {
+  position: absolute;
+  top: 70%;
+  left: 1%;
+  width: 15%;
+  z-index: 200;
+  animation: fadeout 150s ease-in-out infinite;
+}
+
+.deer2 {
+  opacity: 0;
+  position: absolute;
+  top: 80%;
+  left: 23%;
+  width: 15%;
+  z-index: 200;
+  animation: fadeout 150s ease-in-out infinite;
+  animation-delay: 25s;
+}
+
+.deer3 {
+  position: absolute;
+  opacity: 0;
+  top: 75%;
+  right: 30%;
+  width: 12%;
+  z-index: 200;
+  animation: fadeout 150s ease-in-out infinite;
+  animation-delay: 50s;
+}
+@keyframes owlanim {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  48% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.owl {
+  opacity: 0;
+  position: absolute;
+  z-index: 200;
+  top: 44%;
+  left: 29%;
+  width: 25px;
+  animation: owlanim ease-in-out 150s infinite;
+  animation-delay: 75s;
+}
+.owl img {
+  width: 100%;
+  display: block;
 }
